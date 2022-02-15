@@ -16,10 +16,10 @@ body {
 
 .progress-heading-stop {
     font-size: 1rem;
-    margin: 2rem 0 0 0;
+    margin: 1.5rem 0 0 0;
 }
 .progress-heading {
-    margin: 0 0 0 0;
+    margin: 0 0 .5rem 0;
 }
 
 .progress-image {
