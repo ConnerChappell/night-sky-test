@@ -56,6 +56,7 @@ body {
 }
 .current-progress-info div p {
     margin: 0;
+    text-align: center;
 }
 .current-progress-number {
     font-size: 24px;
@@ -78,3 +79,8 @@ body {
 
 
 /* Media Queries */
+@media only screen and (max-width: 330px) {
+    .current-progress-info div {
+        width: 60%;
+    }
+}
