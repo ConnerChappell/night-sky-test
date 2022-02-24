@@ -8,12 +8,30 @@
     <title>Night Sky Test</title>
 </head>
 <body>
-    <h1>Night Sky woo!</h1>
-    <h2>Some night sky content will be here eventually</h2>
+    <div class="graphics-container">
+        <div class="back-to-map-container">
+            <a href="../index.html">
+                <img src="../assets/arrow-left-solid.svg" alt="Back arrow">
+                Map
+            </a>
+        </div>
 
+        <div class="light-tabs-container">
+            <img src="../assets/light-tabs/Tab1.svg" alt="Light tab #1" id="light-tab1">
+            <img src="../assets/light-tabs/Tab2.svg" alt="Light tab #2" id="light-tab2">
+            <img src="../assets/light-tabs/Tab3.svg" alt="Light tab #3" id="light-tab3">
+            <img src="../assets/light-tabs/Tab4.svg" alt="Light tab #4" id="light-tab4">
+        </div>
+    </div>
 
+    <img src="../assets/mountains1.png" alt="Mountains from a photo by Samuel Ferrara on Unsplash" class="mountains">
+
+    <div class="info-container">
+        <p>On the Bortle scale, the nine-level numeric scale that measures the night sky's brightness, this night sky represents what you would find in Inner Cities at a 9.</p>
+    </div>
+    
     <!-- Modal -->
-    <div class="modal" id="welcome-modal">
+    <!-- <div class="modal" id="welcome-modal">
         <div class="modal-content">
             <img src="../assets/Night-Sky-Image.svg" alt="Night sky graphic">
 
@@ -24,7 +42,7 @@
 
             <button id="close-modal-btn">Continue</button>
         </div>
-    </div>
+    </div> -->
 
     <script src="../js/night-sky.js"></script>
 </body>
