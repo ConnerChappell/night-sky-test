@@ -26,7 +26,7 @@ const changeLightTab1 = () => {
         lightTab1.classList.remove('light-tab-outline')
         lightTab2.src = "../assets/light-tabs/Tab2.svg"
         lightTab2.classList.remove('light-tab-outline')
-        changeNightSky2()
+        body.classList.remove('night-sky3')
     } else {
         // changes light tab1 back to solid
         lightTab1.src = "../assets/light-tabs/Tab1.svg"
