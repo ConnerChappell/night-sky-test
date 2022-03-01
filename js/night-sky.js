@@ -10,106 +10,151 @@ const lightTab2 = document.querySelector('#light-tab2')
 const lightTab3 = document.querySelector('#light-tab3')
 const lightTab4 = document.querySelector('#light-tab4')
 
+
 ///////////////////////// functions
 
-// night sky phase 2 functions
-const changeLightTab1 = () => {
-    // if light tab 1 = solid
-    if (lightTab1.src.match("../assets/light-tabs/Tab1.svg")) {
-        // changes light tab1 to outline
-        lightTab1.src = "../assets/light-tabs/Tab1-outline.svg"
-        lightTab1.classList.add('light-tab-outline')
-    // if light tab 1 = outline and light tab 2 = outline
-    } else if (lightTab1.src.match("../assets/light-tabs/Tab1-outline.svg") && lightTab2.src.match("../assets/light-tabs/Tab2-outline.svg")) {
-        // change light tab 1 and 2 to solid and night sky to phase 1
-        lightTab1.src = "../assets/light-tabs/Tab1.svg"
-        lightTab1.classList.remove('light-tab-outline')
-        lightTab2.src = "../assets/light-tabs/Tab2.svg"
-        lightTab2.classList.remove('light-tab-outline')
-        body.classList.remove('night-sky3')
-    } else {
-        // changes light tab1 back to solid
-        lightTab1.src = "../assets/light-tabs/Tab1.svg"
-        lightTab1.classList.remove('light-tab-outline')
-    }
-}
-const changeNightSky2 = () => {
-    if (lightTab1.classList.contains('light-tab-outline')) {
-        // changes night sky background to phase 2
-        body.classList.add('night-sky2')
-    } else {
-        // changes night sky background to phase 1
-        body.classList.remove('night-sky2')
-    }
-}
-const changeInfoText2 = () => {
-    if (body.classList.contains('night-sky2')) {
-        // changes info text to night sky phase 2 text
-        infoText1.textContent = "LIGHT POLLUTION LEVEL: 5"
-        infoText2.textContent = "This sky represents a City Suburban Sky at a number 7."
-    } else {
-        // changes info text back to night sky phase 1
-        infoText1.textContent = ""
-        infoText2.textContent = "On the Bortle scale, the nine-level numeric scale that measures the night sky's brightness, this night sky represents what you would find in Inner Cities at a 9."
-    }
+// resets body background class to have nothing
+const removeAllNightSkyClasses = () => {
+    body.classList.remove('night-sky5', 'night-sky4', 'night-sky3', 'night-sky2', 'night-sky1')
 }
 
-// night sky phase 3 functions
-const changeLightTab2 = () => {
-    // if light tab2 = solid and light tab 1 = solid
-    if (lightTab2.src.match("../assets/light-tabs/Tab2.svg") && lightTab1.src.match("../assets/light-tabs/Tab1.svg")) {
-        // changes light tabs 1 and 2 to outline
-        changeLightTab1()
-        lightTab2.src = "../assets/light-tabs/Tab2-outline.svg"
-        lightTab2.classList.add('light-tab-outline')
-    // if light tab 2 = outline and light tab 1 = outline
-    } else if (lightTab2.src.match("../assets/light-tabs/Tab2-outline.svg") && lightTab1.src.match("../assets/light-tabs/Tab1-outline.svg")) {
-        // changes light tab2 back to solid and night sky to phase 2
-        lightTab2.src = "../assets/light-tabs/Tab2.svg"
-        lightTab2.classList.remove('light-tab-outline')
-        changeNightSky2()
-    // if light tab 2 = solid and light tab 1 = outline
-    } else if (lightTab2.src.match("../assets/light-tabs/Tab2.svg") && lightTab1.src.match("../assets/light-tabs/Tab1-outline.svg")){
-        // changes light tab2 back to outline and night sky to phase 3
-        lightTab2.src = "../assets/light-tabs/Tab2-outline.svg"
-        lightTab2.classList.add('light-tab-outline')
-        changeNightSky3()
-    }
+// functions that change light tabs to outline or solid
+const makeLightTab1Outline = () => {
+    lightTab1.src = '../assets/light-tabs/Tab1-outline.svg'
+    lightTab1.classList.add('light-tab-outline')
 }
-const changeNightSky3 = () => {
-    if (lightTab2.classList.contains('light-tab-outline')) {
-        // changes night sky background to phase 3
-        body.classList.add('night-sky3')
-    } else {
-        // changes night sky background to phase 2
-        body.classList.remove('night-sky3')
-    }
+const makeLightTab1Solid = () => {
+    lightTab1.src = '../assets/light-tabs/Tab1.svg'
+    lightTab1.classList.remove('light-tab-outline')
+}
+const makeLightTab2Outline = () => {
+    lightTab2.src = '../assets/light-tabs/Tab2-outline.svg'
+    lightTab2.classList.add('light-tab-outline')
+}
+const makeLightTab2Solid = () => {
+    lightTab2.src = '../assets/light-tabs/Tab2.svg'
+    lightTab2.classList.remove('light-tab-outline')
+}
+const makeLightTab3Outline = () => {
+    lightTab3.src = '../assets/light-tabs/Tab3-outline.svg'
+    lightTab3.classList.add('light-tab-outline')
+}
+const makeLightTab3Solid = () => {
+    lightTab3.src = '../assets/light-tabs/Tab3.svg'
+    lightTab3.classList.remove('light-tab-outline')
+}
+const makeLightTab4Outline = () => {
+    lightTab4.src = '../assets/light-tabs/Tab4-outline.svg'
+    lightTab4.classList.add('light-tab-outline')
+}
+const makeLightTab4Solid = () => {
+    lightTab4.src = '../assets/light-tabs/Tab4.svg'
+    lightTab4.classList.remove('light-tab-outline')
+}
+
+// functions that change info text
+const changeInfoText1 = () => {
+    // changes info text to night sky 1 text
+    infoText1.textContent = ""
+    infoText2.textContent = "On the Bortle scale, the nine-level numeric scale that measures the night sky's brightness, this night sky represents what you would find in Inner Cities at a 9."
+}
+const changeInfoText2 = () => {
+    // changes info text to night sky 2 text
+    infoText1.textContent = "LIGHT POLLUTION LEVEL: 5"
+    infoText2.textContent = "This sky represents a City Suburban Sky at a number 7."
 }
 const changeInfoText3 = () => {
-    if (body.classList.contains('night-sky3')) {
-        // changes info text to night sky phase 3 text
-        infoText1.textContent = "LIGHT POLLUTION LEVEL: 6"
-        infoText2.textContent = "This would be a 6 for a Bright Suburban Sky."
-    } else {
-        // changes info text back to night sky phase 2
-        infoText1.textContent = "LIGHT POLLUTION LEVEL: 5"
-        infoText2.textContent = "This sky represents a City Suburban Sky at a number 7."
-    }
+    // changes info text to night sky 3 text
+    infoText1.textContent = "LIGHT POLLUTION LEVEL: 6"
+    infoText2.textContent = "This would be a 6 for a Bright Suburban Sky."
 }
+const changeInfoText4 = () => {
+    // changes info text to night sky 4 text
+    infoText1.textContent = ""
+    infoText2.textContent = "Timpanogos Cave National Monument would fall between 5-4 which would be Suburban Sky. This won the recognition of Urban Night Sky from the IDA."
+}
+const changeInfoText5 = () => {
+    // changes info text to night sky 5 text
+    infoText1.textContent = ""
+    infoText2.textContent = "This represents an excellent dark-sky site where many constellations, particularly fainter ones, are barely recognizable amid the large number of stars."
+}
+
 
 ///////////////////////// event listeners
 
-// click event to display night sky phase 2
 lightTab1.addEventListener('click', () => {
-    changeLightTab1()
-    changeNightSky2()
-    changeInfoText2()
+    // if light tab 1 = solid then make tab 1 = outline and add night-sky2 class to body background
+    if (lightTab1.src.match('../assets/light-tabs/Tab1.svg')) {
+        makeLightTab1Outline()
+        changeInfoText2()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky2')
+    // else light tab 1 = outline then make light tab 1 = solid and change body background class to night-sky1
+    } else {
+        makeLightTab1Solid()
+        makeLightTab2Solid()
+        makeLightTab3Solid()
+        makeLightTab4Solid()
+        changeInfoText1()
+        removeAllNightSkyClasses()
+    }
 })
-// click event to display night sky phase 3
+
 lightTab2.addEventListener('click', () => {
-    changeLightTab2()
-    changeNightSky3()
-    changeInfoText3()
+    // if light tab 2 = solid then make tabs 1 and 2 = outline and add night-sky3 class to body background
+    if (lightTab2.src.match('../assets/light-tabs/Tab2.svg')) {
+        makeLightTab1Outline()
+        makeLightTab2Outline()
+        changeInfoText3()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky3')
+    // else light tab 2 = outline then make light tab 2 = solid and change body background class to night-sky2
+    } else {
+        makeLightTab2Solid()
+        makeLightTab3Solid()
+        makeLightTab4Solid()
+        changeInfoText2()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky2')
+    }
+})
+
+lightTab3.addEventListener('click', () => {
+    // if light tab 3 = solid then make tabs 1, 2, and 3 = outline and add night-sky4 class to body background
+    if (lightTab3.src.match('../assets/light-tabs/Tab3.svg')) {
+        makeLightTab1Outline()
+        makeLightTab2Outline()
+        makeLightTab3Outline()
+        changeInfoText4()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky4')
+    // else light tab 3 = outline then make light tab 3 = solid and change body background class to night-sky3
+    } else {
+        makeLightTab3Solid()
+        makeLightTab4Solid()
+        changeInfoText3()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky3')
+    }
+})
+
+lightTab4.addEventListener('click', () => {
+    // if light tab 4 = solid then make all tabs = outline and add night-sky5 class to body background
+    if (lightTab4.src.match('../assets/light-tabs/Tab4.svg')) {
+        makeLightTab1Outline()
+        makeLightTab2Outline()
+        makeLightTab3Outline()
+        makeLightTab4Outline()
+        changeInfoText5()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky5')
+    // else light tab 4 = outline then make light tab 4 = solid and change body background class to night-sky4
+    } else {
+        makeLightTab4Solid()
+        changeInfoText4()
+        removeAllNightSkyClasses()
+        body.classList.add('night-sky4')
+    }
 })
 
 // click event listener that closes welcome modal
