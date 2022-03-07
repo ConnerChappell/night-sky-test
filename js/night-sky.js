@@ -55,27 +55,27 @@ const makeLightTab4Solid = () => {
 // functions that change info text
 const changeInfoText1 = () => {
     // changes info text to night sky 1 text
-    infoText1.textContent = ""
+    infoText1.textContent = "INNER-CITY SKY"
     infoText2.textContent = "On the Bortle scale, the nine-level numeric scale that measures the night sky's brightness, this night sky represents what you would find in Inner Cities at a 9."
 }
 const changeInfoText2 = () => {
     // changes info text to night sky 2 text
-    infoText1.textContent = "LIGHT POLLUTION LEVEL: 5"
+    infoText1.textContent = "CITY SKY"
     infoText2.textContent = "This sky represents a City Suburban Sky at a number 7."
 }
 const changeInfoText3 = () => {
     // changes info text to night sky 3 text
-    infoText1.textContent = "LIGHT POLLUTION LEVEL: 6"
+    infoText1.textContent = "SUBURBAN SKY"
     infoText2.textContent = "This would be a 6 for a Bright Suburban Sky."
 }
 const changeInfoText4 = () => {
     // changes info text to night sky 4 text
-    infoText1.textContent = ""
+    infoText1.textContent = "RURAL SKY"
     infoText2.textContent = "Timpanogos Cave National Monument would fall between 5-4 which would be Suburban Sky. This won the recognition of Urban Night Sky from the IDA."
 }
 const changeInfoText5 = () => {
     // changes info text to night sky 5 text
-    infoText1.textContent = ""
+    infoText1.textContent = "DARK SKY SITES"
     infoText2.textContent = "This represents an excellent dark-sky site where many constellations, particularly fainter ones, are barely recognizable amid the large number of stars."
 }
 
