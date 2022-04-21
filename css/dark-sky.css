@@ -164,6 +164,7 @@ body {
 .info-container {
     background-color: #141414;
     padding: 1rem 1rem 7rem 1rem;
+    height: inherit;
     text-align: center;
     font-size: 20px;
     font-weight: 600;
