@@ -71,7 +71,7 @@ const changeInfoText3 = () => {
 const changeInfoText4 = () => {
     // changes info text to night sky 4 text
     infoText1.textContent = "RURAL SKY"
-    infoText2.textContent = "Timpanogos Cave National Monument would fall 5-4 which would be very similar to a Suburban Sky. This won the recognition of Urban Night Sky Place from the IDA."
+    infoText2.textContent = "Timpanogos Cave National Monument would fall 4-5 which would be very similar to a Suburban Sky. This won the recognition of Urban Night Sky Place from the IDA."
 }
 const changeInfoText5 = () => {
     // changes info text to night sky 5 text
